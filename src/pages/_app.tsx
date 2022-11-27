@@ -3,19 +3,22 @@ import type { AppProps } from 'next/app'
 import NextHead from 'next/head'
 import * as React from 'react'
 import { WagmiConfig } from 'wagmi'
-
+import '../_app.css';
 import { client } from '../wagmi'
 
 function App({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = React.useState(false)
-  React.useEffect(() => setMounted(true), [])
+  
+  React.useEffect(() => 
+    setMounted(true)
+  , [])
+  
   return (
     <WagmiConfig client={client}>
       <ConnectKitProvider>
         <NextHead>
-          <title>My wagmi + ConnectKit App</title>
+          <title>NFTouring Minting Page</title>
         </NextHead>
-
         {mounted && <Component {...pageProps} />}
       </ConnectKitProvider>
     </WagmiConfig>

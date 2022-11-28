@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app'
 import NextHead from 'next/head'
 import * as React from 'react'
 import { WagmiConfig } from 'wagmi'
-import '../_app.css';
 import { client } from '../wagmi'
 
 function App({ Component, pageProps }: AppProps) {

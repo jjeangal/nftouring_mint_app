@@ -1,20 +1,23 @@
 import { ConnectKitButton } from 'connectkit'
 import { useAccount } from 'wagmi'
-import { Flex, Box, Spacer, Center, Link, IconButton, Button, Container } from '@chakra-ui/react'
+import { Flex, Spacer, Center, Link, Button, Container, Box } from '@chakra-ui/react'
+import { WalletBox } from '../components/WalletBox'
+import { QuantityBox } from '../components/QuantityBox'
+import { PriceBox } from '../components/PriceBox'
 
 import { Account } from '../components'
 
 function Page() {
   const { isConnected } = useAccount()
   return (
-      <Flex direction="column" backgroundColor={"red"} height="100vh" width="100vw">
-        <Flex h="7%" backgroundColor={'green'} justifyContent="center">
+      <Flex direction="column" backgroundColor={"red"} height="98vh" width="99vw">
+        <Flex h="7%" backgroundColor={'#FB9D11'} justifyContent="center">
           <Center alignItems="center">
             <Link href="https://nftouring.io/" isExternal>BESOIN D'AIDE POUR CONNECTER UN WALLET? CONSULTEZ L'ARTICLE</Link>
           </Center>
         </Flex>
         <Container>
-          <Button>Go Back</Button>
+          <Button ml="10px" mt="10px">Go Back</Button>
         </Container>
         <Spacer />
         <Flex h="6%" justifyContent="center">
@@ -23,8 +26,12 @@ function Page() {
           </Center>
         </Flex>        
         <Spacer />
-        <Flex h="30%">
-          <ConnectKitButton />
+        <Flex h="30%" w="100%">
+          <WalletBox />
+          <Spacer />
+          <QuantityBox />
+          <Spacer />
+          <PriceBox />
         </Flex>
       </Flex>
   )
@@ -32,4 +39,4 @@ function Page() {
 
 export default Page
 
-/** {isConnected && <Account />} */
+/** {isConnected && <Account />}           <ConnectKitButton />*/

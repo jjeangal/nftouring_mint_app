@@ -1,4 +1,3 @@
-import { ConnectKitButton } from 'connectkit'
 import { useAccount } from 'wagmi'
 import { Flex, Spacer, Center, Link, Button, Container, Box } from '@chakra-ui/react'
 import { WalletBox } from '../components/WalletBox'
@@ -37,4 +36,4 @@ function Page() {
 
 export default Page
 
-/** {isConnected && <Account />}           <ConnectKitButton />*/
+/** {isConnected && <Account />}          */

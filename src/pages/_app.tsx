@@ -4,6 +4,7 @@ import NextHead from 'next/head'
 import * as React from 'react'
 import { WagmiConfig } from 'wagmi'
 import { client } from '../wagmi'
+import '../styles/_app.css'
 
 function App({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = React.useState(false)

@@ -6,11 +6,13 @@ import { QuantityBox } from '../components/QuantityBox'
 import { PriceBox } from '../components/PriceBox'
 
 import { Account } from '../components'
+import { LicenseImage } from '../components/LicenseImage'
 
 function Page() {
   const { isConnected } = useAccount()
   return (
-      <Flex direction="column" backgroundColor={"red"} height="98vh" width="99vw">
+    <>
+      <Flex direction="column" height="98vh" width="99vw">
         <Flex h="7%" backgroundColor={'#FB9D11'} justifyContent="center">
           <Center alignItems="center">
             <Link href="https://nftouring.io/" isExternal>BESOIN D'AIDE POUR CONNECTER UN WALLET? CONSULTEZ L'ARTICLE</Link>
@@ -21,9 +23,7 @@ function Page() {
         </Container>
         <Spacer />
         <Flex h="6%" justifyContent="center">
-          <Center>
-            <p>NFT Image</p>
-          </Center>
+          <LicenseImage />
         </Flex>        
         <Spacer />
         <Flex h="30%" w="100%">
@@ -34,6 +34,7 @@ function Page() {
           <PriceBox />
         </Flex>
       </Flex>
+    </>
   )
 }
 

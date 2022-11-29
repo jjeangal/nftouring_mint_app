@@ -7,17 +7,14 @@ import { PriceBox } from '../components/PriceBox'
 
 import { Account } from '../components'
 import { LicenseImage } from '../components/LicenseImage'
+import { InfoBanner } from '../components/InfoBanner'
 
 function Page() {
   const { isConnected } = useAccount()
   return (
     <>
       <Flex direction="column" height="98vh" width="99vw">
-        <Flex h="7%" backgroundColor={'#FB9D11'} justifyContent="center">
-          <Center alignItems="center">
-            <Link href="https://nftouring.io/" isExternal>BESOIN D'AIDE POUR CONNECTER UN WALLET? CONSULTEZ L'ARTICLE</Link>
-          </Center>
-        </Flex>
+        <InfoBanner />
         <Container>
           <Button ml="10px" mt="10px">Go Back</Button>
         </Container>

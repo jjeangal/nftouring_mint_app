@@ -3,19 +3,18 @@ import Link from "next/link";
 
 export function PriceBox() {
   return (
-    <Flex w="31%" direction='column' m={10} textColor='white' backgroundColor={"#1F1E1E"}>
-      <Text>TOTAL</Text>
-      <Spacer />
-      <Flex direction='column'>
-        <HStack spacing='30px'>
+    <Flex h="100%" direction='column' textColor='white' borderRadius='10px' backgroundColor={"#1F1E1E"}>
+      <Flex ml='5%' mt='3%' direction='column'>
+        <Text>TOTAL</Text>
+        <HStack spacing='10%'>
           <Box>
             <Text>PRIX</Text>
           </Box>
           <Box>
-            <Text>QUANTITE</Text>
+            <Text>QUANTITÉ</Text>
           </Box>
         </HStack>
-        <HStack spacing='30px'>
+        <HStack spacing='10%'>
           <Box>
             <Text>2ETH</Text>
           </Box>
@@ -25,7 +24,7 @@ export function PriceBox() {
         </HStack>
       </Flex>
       <Spacer />
-      <Flex>
+      <Flex mb='5%' ml='5%' mr='5%'>
         <Link href={""}>VOIR LES CGV</Link>
         <Spacer />
         <Button>Mint</Button>

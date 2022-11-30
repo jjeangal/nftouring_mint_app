@@ -1,14 +1,38 @@
-import { Flex, Text, Spacer } from "@chakra-ui/react";
+import { Flex, Text, Spacer, VStack, HStack, Icon, Colors, Box } from "@chakra-ui/react";
 import { ConnectKitButton } from 'connectkit'
 
 export function WalletBox() {
 
+  const isConnected = true;
+
+  const CircleIcon = (color: Colors) => (
+    <Icon viewBox='0 0 200 200' {...color}>
+      <path
+        fill='currentColor'
+        d='M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0'
+      />
+    </Icon>
+  )
+
   return (
-    <Flex w="31%" m={10} backgroundColor={"#1F1E1E"} direction="column">
-      <Text mt='20px' ml='20px' color='white'>WALLET</Text>
-      <Text ml='20px' color='white'>POUR COMMENCER, <br/>CONNECTEZ VOTRE WALLET</Text>
+    <Flex h='100%' backgroundColor={"#1F1E1E"} borderRadius='10px' direction="column">
+      <VStack direction='column' alignItems='left' ml='5%' mt='3%'>
+        <Text color='white'>WALLET</Text>
+        <HStack>
+          {isConnected ? 
+            (<>
+              <CircleIcon color='#2EE240' />
+              <Text color="white">CONNECTÉ</Text>
+            </>) : 
+            (<>
+              <CircleIcon color='red' />
+              <Text>NON CONNECTÉ</Text>
+            </>) 
+          }
+        </HStack>
+      </VStack>
       <Spacer />
-      <Flex mb='20px' mr='20px' justifyContent='flex-end'>
+      <Flex mb='5%' mr='5%' justifyContent='flex-end'>
         <ConnectKitButton />
       </Flex>
     </Flex>

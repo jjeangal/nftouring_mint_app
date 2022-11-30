@@ -12,7 +12,7 @@ function Page() {
   const { isConnected } = useAccount()
   return (
     <>
-      <Flex direction="column" height="98vh" width="99vw">
+      <Flex direction="column" height="97vh" width="99vw">
         <InfoBanner />
         <Container>
           <Button ml="10px" mt="10px">Go Back</Button>
@@ -23,11 +23,17 @@ function Page() {
         </Flex>        
         <Spacer />
         <Flex h="30%" w="100%">
-          <WalletBox />
+          <Box w='31%' h='100%'>              
+            <WalletBox />
+          </Box>
           <Spacer />
-          <QuantityBox />
+          <Box w='31%' h='100%'>              
+            <QuantityBox />
+          </Box>
           <Spacer />
-          <PriceBox />
+          <Box w='31%' h='100%'>              
+            <PriceBox />
+          </Box>
         </Flex>
       </Flex>
     </>

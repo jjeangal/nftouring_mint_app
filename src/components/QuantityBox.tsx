@@ -16,7 +16,7 @@ export function QuantityBox() {
 
   return (
     <Flex h="100%" backgroundColor={"#1F1E1E"} borderRadius='10px' direction="column" textColor="white">
-      <VStack ml='5%' direction='column' alignItems='left' mt='3%'>
+      <VStack ml='5%' alignItems='left' mt='3%'>
         <Text>QUANTITÉ</Text>
         <Text>SELECTIONNEZ LE <br/> NOMBRE DE DRIVER <br/> LICENCE</Text>
       </VStack>

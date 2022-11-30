@@ -1,28 +1,28 @@
-import { Button, Box, Flex, HStack, Spacer, Text } from "@chakra-ui/react";
+import { Button, Box, VStack, Flex, HStack, Spacer, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 export function PriceBox() {
   return (
     <Flex h="100%" direction='column' textColor='white' borderRadius='10px' backgroundColor={"#1F1E1E"}>
-      <Flex ml='5%' mt='3%' direction='column'>
-        <Text>TOTAL</Text>
+      <VStack ml='5%' mt='5%' alignItems='left' h='40%'>
+        <Text m='0'>TOTAL</Text>
         <HStack spacing='10%'>
           <Box>
-            <Text>PRIX</Text>
+            <Text m='0'>PRIX</Text>
           </Box>
-          <Box>
+          <Box >
             <Text>QUANTITÉ</Text>
           </Box>
         </HStack>
         <HStack spacing='10%'>
           <Box>
-            <Text>2ETH</Text>
+            <Text m='0'>2ETH</Text>
           </Box>
           <Box>
-            <Text>2</Text>
+            <Text m='0'>2</Text>
           </Box>
         </HStack>
-      </Flex>
+      </VStack>
       <Spacer />
       <Flex mb='5%' ml='5%' mr='5%'>
         <Link href={""}>VOIR LES CGV</Link>

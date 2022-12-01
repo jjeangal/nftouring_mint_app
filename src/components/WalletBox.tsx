@@ -26,7 +26,7 @@ export function WalletBox() {
             </>) : 
             (<>
               <CircleIcon color='red' />
-              <Text>NON CONNECTÉ</Text>
+              <Text fontSize='sm' color="white">NON CONNECTÉ</Text>
             </>) 
           }
         </HStack>

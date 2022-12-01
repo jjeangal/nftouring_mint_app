@@ -1,4 +1,4 @@
-import { Button, Box, VStack, Flex, HStack, Spacer, Text } from "@chakra-ui/react";
+import { Button, Box, VStack, Flex, HStack, Spacer, Text, Center } from "@chakra-ui/react";
 import Link from "next/link";
 
 export function PriceBox() {
@@ -30,7 +30,9 @@ export function PriceBox() {
       <Spacer />
 
       <Flex mb='5%' ml='5%' mr='5%'>
-        <Link href={""}>VOIR LES CGV</Link>
+        <Center verticalAlign="middle">
+          <Link href="https://nftouring.io" fontWeight="bold" fontSize="sm" isExternal>VOIR LES CGV</Link>
+        </Center>
         <Spacer />
         <Button>Mint</Button>
       </Flex>     

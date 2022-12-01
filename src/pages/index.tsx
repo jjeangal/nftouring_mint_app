@@ -16,6 +16,8 @@ function Page() {
     location.href = "https://nftouring.io";
   }
 
+  const sale = "Public";
+
   return (
     <>
       <Flex 
@@ -51,15 +53,15 @@ function Page() {
         <Spacer />
         <Flex h="28%" mb='1.5%'>
           <Spacer />
-          <Box w='31%'>              
+          <Box w='30%'>              
             <WalletBox />
           </Box>
           <Spacer />
-          <Box w='31%'>              
+          <Box w='30%'>              
             <QuantityBox />
           </Box>
           <Spacer />
-          <Box w='31%'>              
+          <Box w='30%'>              
             <PriceBox />
           </Box>
           <Spacer />

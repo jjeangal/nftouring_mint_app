@@ -22,11 +22,11 @@ export function WalletBox() {
           {isConnected ? 
             (<>
               <CircleIcon color='#2EE240' />
-              <Text fontSize='sm' color="white">CONNECTÉ</Text>
+              <Text fontSize='sm' fontWeight="bold" color="white">CONNECTÉ</Text>
             </>) : 
             (<>
               <CircleIcon color='red' />
-              <Text fontSize='sm' color="white">NON CONNECTÉ</Text>
+              <Text fontSize='sm' fontWeight="bold" color="white">NON CONNECTÉ</Text>
             </>) 
           }
         </HStack>

@@ -1,5 +1,5 @@
 import { useAccount } from 'wagmi'
-import { Flex, Spacer, Text, Link, Container, Box, IconButton, HStack } from '@chakra-ui/react'
+import { Flex, Spacer, Text, Link, Container, Box, IconButton, HStack, Heading } from '@chakra-ui/react'
 import { WalletBox } from '../components/WalletBox'
 import { QuantityBox } from '../components/QuantityBox'
 import { PriceBox } from '../components/PriceBox'
@@ -8,7 +8,6 @@ import { ChevronLeftIcon } from '@chakra-ui/icons'
 import { Account } from '../components'
 import { LicenseImage } from '../components/LicenseImage'
 import { InfoBanner } from '../components/InfoBanner'
-import { SP } from 'next/dist/shared/lib/utils'
 
 function Page() {
   const { isConnected } = useAccount()
@@ -16,10 +15,21 @@ function Page() {
   function goToWebsite() {
     location.href = "https://nftouring.io";
   }
-  
+
   return (
     <>
-      <Flex direction="column" height="97vh" width="99vw">
+      <Flex 
+        direction="column" 
+        height="100vh" 
+        width="100vw" 
+        bgImage="url('https://i.postimg.cc/0yBKsBMr/texture.jpg')"
+        bgRepeat='no-repeat' 
+        bgPosition='center center'
+        bgAttachment='fixed'
+        overflow='hidden'
+        display='inline-flex'
+        bgSize='cover' 
+      >
         <InfoBanner />
         <HStack ml="1%" mt="1%" textColor='white'>
           <IconButton 
@@ -39,17 +49,17 @@ function Page() {
           <LicenseImage />
         </Flex>        
         <Spacer />
-        <Flex h="28%" w="100%">
+        <Flex h="28%" mb='1.5%'>
           <Spacer />
-          <Box w='31%' h='100%'>              
+          <Box w='31%'>              
             <WalletBox />
           </Box>
           <Spacer />
-          <Box w='31%' h='100%'>              
+          <Box w='31%'>              
             <QuantityBox />
           </Box>
           <Spacer />
-          <Box w='31%' h='100%'>              
+          <Box w='31%'>              
             <PriceBox />
           </Box>
           <Spacer />

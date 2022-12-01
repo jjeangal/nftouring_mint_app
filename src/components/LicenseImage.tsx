@@ -4,8 +4,8 @@ import License from '../assets/animatedLicense.gif';
 
 export function LicenseImage() {
   return (
-    <Center>
-        <Image src={License.src} alt="Private Driver License" boxSize='800%' />
+    <Center mb='10px'>
+      <Image src={License.src} alt="Private Driver License" boxSize='800%' />
     </Center>  
   )
 }

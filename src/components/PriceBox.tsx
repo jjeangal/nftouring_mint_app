@@ -4,17 +4,20 @@ import Link from "next/link";
 export function PriceBox() {
   return (
     <Flex h="100%" direction='column' textColor='white' borderRadius='10px' backgroundColor={"#1F1E1E"}>
-      <VStack ml='5%' mt='5%' alignItems='left' h='40%'>
-        <Text m='0'>TOTAL</Text>
-        <HStack spacing='10%'>
+      
+        <Text mt="5%" ml="5%" fontWeight="bold" fontSize='xl' color="#676767">TOTAL</Text>
+        
+        <Spacer />
+        
+        <HStack ml="5%" spacing='10%'>
           <Box>
-            <Text m='0'>PRIX</Text>
+            <Text m='0'fontWeight="bold" fontSize='xl' color="#676767">PRIX</Text>
           </Box>
           <Box >
-            <Text>QUANTITÉ</Text>
+            <Text m='0' fontWeight="bold" fontSize='xl' color="#676767">QUANTITÉ</Text>
           </Box>
         </HStack>
-        <HStack spacing='10%'>
+        <HStack ml="5%" spacing='10%'>
           <Box>
             <Text m='0'>2ETH</Text>
           </Box>
@@ -22,8 +25,10 @@ export function PriceBox() {
             <Text m='0'>2</Text>
           </Box>
         </HStack>
-      </VStack>
+      <Flex />
+      
       <Spacer />
+
       <Flex mb='5%' ml='5%' mr='5%'>
         <Link href={""}>VOIR LES CGV</Link>
         <Spacer />

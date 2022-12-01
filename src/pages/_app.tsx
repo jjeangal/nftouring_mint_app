@@ -4,7 +4,9 @@ import NextHead from 'next/head'
 import * as React from 'react'
 import { WagmiConfig } from 'wagmi'
 import { client } from '../wagmi'
-import '../styles/_app.css'
+import Fonts from '../styles/Fonts'
+import theme from '../styles/theme'
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = React.useState(false)
@@ -14,14 +16,18 @@ function App({ Component, pageProps }: AppProps) {
   , [])
   
   return (
-    <WagmiConfig client={client}>
-      <ConnectKitProvider>
-        <NextHead>
-          <title>NFTouring Minting Page</title>
-        </NextHead>
-        {mounted && <Component {...pageProps} />}
-      </ConnectKitProvider>
-    </WagmiConfig>
+    <ChakraProvider theme={theme}>
+
+      <WagmiConfig client={client}>
+        <ConnectKitProvider >
+          <NextHead>
+            <title>NFTouring Minting Page</title>
+          </NextHead>
+          <Fonts />
+          {mounted && <Component {...pageProps} />}
+        </ConnectKitProvider>
+      </WagmiConfig>
+    </ChakraProvider>
   )
 }
 

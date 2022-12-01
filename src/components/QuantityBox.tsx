@@ -16,13 +16,13 @@ export function QuantityBox() {
 
   return (
     <Flex h="100%" backgroundColor={"#1F1E1E"} borderRadius='10px' direction="column" textColor="white">
-      <VStack ml='5%' alignItems='left' mt='3%'>
-        <Text>QUANTITÉ</Text>
-        <Text>SELECTIONNEZ LE <br/> NOMBRE DE DRIVER <br/> LICENCE</Text>
+      <VStack ml='5%' alignItems='left' mt='5%'>
+        <Text fontWeight='bold' fontSize='xl' color="#676767">QUANTITÉ</Text>
+        <Text fontSize="xl" >SELECTIONNEZ LE <br/> NOMBRE DE DRIVER <br/> LICENCE</Text>
       </VStack>
       <Spacer />
-      <Flex mb='5%' ml='5%' mr='5%'>
-        <Text m='0'>LIMITE MAX: </Text>
+      <Flex mb='5%' ml='5%' mr='5%' verticalAlign='middle'>
+        <Text>LIMITE MAX: </Text>
         <Spacer />
         <HStack >
           <Button {...dec}>-</Button>

@@ -16,13 +16,13 @@ export function WalletBox() {
 
   return (
     <Flex h='100%' backgroundColor={"#1F1E1E"} borderRadius='10px' direction="column">
-      <VStack direction='column' alignItems='left' ml='5%' mt='3%'>
-        <Text color='white'>WALLET</Text>
+      <VStack direction='column' alignItems='left' ml='5%' mt='5%'>
+        <Text fontWeight='bold' fontSize='xl' color='#676767'>WALLET</Text>
         <HStack>
           {isConnected ? 
             (<>
               <CircleIcon color='#2EE240' />
-              <Text color="white">CONNECTÉ</Text>
+              <Text fontSize='sm' color="white">CONNECTÉ</Text>
             </>) : 
             (<>
               <CircleIcon color='red' />

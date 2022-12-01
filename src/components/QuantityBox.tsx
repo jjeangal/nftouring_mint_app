@@ -26,10 +26,10 @@ export function QuantityBox() {
           <Text fontSize="sm" fontWeight="bold">LIMITE MAX: </Text>          
         </Center>
         <Spacer />
-        <HStack w="40%" alignContent="right" spacing="0">
-          <Button bgColor="black" {...dec}>-</Button>
-          <Input focusBorderColor="black" bgColor="#2a2a2a" borderRadius="0" border="none" textAlign="center" {...input} />
-          <Button bgColor="black" {...inc}>+</Button>
+        <HStack w="35%" alignContent="right" spacing="0">
+          <Button borderRadius="20px 0 0 20px" bgColor="black" {...dec}>-</Button>
+          <Input focusBorderColor="transparent" bgColor="#2a2a2a" borderRadius="0" m="0" border="none" textAlign="center" {...input} />
+          <Button borderRadius="0 20px 20px 0" bgColor="black" {...inc}>+</Button>
         </HStack>
       </Flex>
     </Flex>

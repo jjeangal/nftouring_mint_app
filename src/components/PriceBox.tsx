@@ -28,7 +28,7 @@ export function PriceBox() {
           <Link href="" fontSize="xs" fontWeight="bold" color='white' isExternal>VOIR LES CGV</Link>
         </Center>
         <Spacer />
-        <Button>Mint</Button>
+        <Button _hover={{background: "#2a2a2a"}} bgColor="black" borderRadius="20px" w="35%">MINT</Button>
       </Flex>     
     </Flex>
   )

@@ -1,18 +1,26 @@
-import { useAccount } from 'wagmi'
-import { Flex, Spacer, Text, Link, Box, HStack } from '@chakra-ui/react'
-import { WalletBox } from '../components/WalletBox'
-import { QuantityBox } from '../components/QuantityBox'
-import { PriceBox } from '../components/PriceBox'
+import { Flex, Spacer, Text, Link, Box, HStack, useNumberInput, Button } from '@chakra-ui/react'
+import { WalletBox } from '../components/boxes/WalletBox'
+import { QuantityBox } from '../components/boxes/QuantityBox'
+import { PriceBox } from '../components/boxes/PriceBox'
 import { BackButton } from '../components/buttons/BackButton'
 import { LicenseImage } from '../components/LicenseImage'
 import { InfoBanner } from '../components/InfoBanner'
 
-import { Account } from '../components'
-
 function Page() {
-  const { isConnected } = useAccount()
 
   const sale = "Public";
+
+  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
+    useNumberInput({
+      step: 1,
+      defaultValue: 1,
+      min: 0,
+      max: 2
+    })
+    
+  const inc = getIncrementButtonProps()
+  const dec = getDecrementButtonProps()
+  const amount = getInputProps()
 
   return (
     <>
@@ -33,7 +41,7 @@ function Page() {
           <BackButton />
           <Link href='https://nftouring.io' fontWeight="bold" fontSize="lg" color='white'>WEBSITE</Link>
           <Box w='2%' />
-            <Text>PRESALE / PUBLIC SALE</Text>
+          <Text>PRESALE / PUBLIC SALE</Text>
         </HStack>
         <Spacer />
         <Flex h="7%" justifyContent="center">
@@ -47,11 +55,11 @@ function Page() {
           </Box>
           <Spacer />
           <Box w='30%'>              
-            <QuantityBox />
+            <QuantityBox inc={inc} dec={dec} amount={amount} />
           </Box>
           <Spacer />
           <Box w='30%'>              
-            <PriceBox />
+            <PriceBox amount={amount} />
           </Box>
           <Spacer />
         </Flex>
@@ -61,5 +69,3 @@ function Page() {
 }
 
 export default Page
-
-/** {isConnected && <Account />}          */

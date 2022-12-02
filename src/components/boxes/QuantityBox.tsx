@@ -1,19 +1,23 @@
-import { Flex, Text, Spacer, VStack, useNumberInput, HStack, Button, Input, Center } from "@chakra-ui/react";
+import { 
+  Flex, 
+  Text, 
+  Spacer, 
+  VStack, 
+  HStack, 
+  Button, 
+  Input, 
+  Center, 
+  ButtonProps, 
+  InputProps 
+} from "@chakra-ui/react";
 
-export function QuantityBox() {
+interface QuantityProps {
+  inc: ButtonProps;
+  dec: ButtonProps;
+  amount: InputProps;
+}
 
-  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
-    useNumberInput({
-      step: 1,
-      defaultValue: 1,
-      min: 0,
-      max: 2
-    })
-
-  const inc = getIncrementButtonProps()
-  const dec = getDecrementButtonProps()
-  const input = getInputProps()
-
+export function QuantityBox ({inc, dec, amount} : QuantityProps) {
   return (
     <Flex h="100%" backgroundColor={"#1F1E1E"} borderRadius='10px' direction="column" textColor="white">
       <VStack ml='5%' alignItems='left' mt='5%'>
@@ -28,7 +32,7 @@ export function QuantityBox() {
         <Spacer />
         <HStack w="35%" alignContent="right" spacing="0">
           <Button _hover={{background:"white",textColor:"#2a2a2a"}} borderRadius="20px 0 0 20px" bgColor="black" {...dec}>-</Button>
-          <Input focusBorderColor="transparent" bgColor="#2a2a2a" borderRadius="0" m="0" border="none" textAlign="center" {...input} />
+          <Input focusBorderColor="transparent" bgColor="#2a2a2a" borderRadius="0" m="0" border="none" textAlign="center" {...amount} />
           <Button _hover={{background:"white",textColor:"#2a2a2a"}} borderRadius="0 20px 20px 0" bgColor="black" {...inc}>+</Button>
         </HStack>
       </Flex>

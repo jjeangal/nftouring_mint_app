@@ -1,19 +1,11 @@
-import { Center, Flex, Link } from "@chakra-ui/react";
+import { Center, Flex } from "@chakra-ui/react";
+import { WalletLink } from "./links/WalletLink";
 
 export function InfoBanner() {
   return (
     <Flex h="7%" backgroundColor={'#FB9D11'} justifyContent="center">
       <Center alignItems="center">
-        <Link 
-          href="https://nftouring.io/creer-un-portefeuille-pour-mon-nft/" 
-          _hover={{
-            textDecoration: "none"
-          }}
-          textDecoration="underline" 
-          fontWeight="bold" 
-          color='black' 
-          isExternal
-        >BESOIN D'AIDE POUR CONNECTER UN WALLET? CONSULTEZ L'ARTICLE</Link>
+        <WalletLink />
       </Center>
     </Flex>
   )

@@ -1,6 +1,6 @@
 import { Flex, Text, Spacer, VStack, HStack } from "@chakra-ui/react";
-import { ConnectButton } from "./buttons/ConnectButton";
-import { CircleIcon } from "./icons/CircleIcon";
+import { ConnectButton } from "../buttons/ConnectButton";
+import { CircleIcon } from "../icons/CircleIcon";
 import { useAccount } from 'wagmi'
 
 export function WalletBox() {

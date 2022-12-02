@@ -1,9 +1,12 @@
 import { getDefaultClient } from 'connectkit'
-import { createClient } from 'wagmi'
+import { createClient, chain } from 'wagmi'
+
+const chains = [chain.mainnet];
 
 export const client = createClient(
   getDefaultClient({
+    appName: "NFTouring Minting Page",
     autoConnect: true,
-    appName: 'NFTouring Minting Page',
+    chains
   }),
 )

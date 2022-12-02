@@ -1,4 +1,4 @@
-import { Flex, Text, Spacer, VStack, HStack, Icon, Colors, Box } from "@chakra-ui/react";
+import { Flex, Text, Spacer, VStack, HStack, Icon, Colors, Button } from "@chakra-ui/react";
 import { ConnectKitButton } from 'connectkit'
 
 export function WalletBox() {
@@ -13,6 +13,30 @@ export function WalletBox() {
       />
     </Icon>
   )
+
+  const ConnectButton = () => {
+    return (
+      <ConnectKitButton.Custom>
+        {({ isConnected, show, truncatedAddress, ensName }) => {
+          return (
+            <Button 
+              bgColor="black" 
+              textColor="white" 
+              borderRadius="20px" 
+              _hover={{
+                bgColor: "white",
+                textColor: "black"
+              }}
+              w="35%" 
+              onClick={show}
+            >
+              {isConnected ? ensName ?? truncatedAddress : "Connect Wallet"}
+            </Button>
+          );
+        }}
+      </ConnectKitButton.Custom>
+    )
+  }
 
   return (
     <Flex h='100%' backgroundColor={"#1F1E1E"} borderRadius='10px' direction="column">
@@ -33,7 +57,7 @@ export function WalletBox() {
       </VStack>
       <Spacer />
       <Flex mb='5%' mr='5%' justifyContent='flex-end'>
-        <ConnectKitButton />
+        <ConnectButton />
       </Flex>
     </Flex>
   )

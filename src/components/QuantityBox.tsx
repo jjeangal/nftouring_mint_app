@@ -23,13 +23,13 @@ export function QuantityBox() {
       <Spacer />
       <Flex mb='5%' ml='5%' mr='5%'>
         <Center verticalAlign="middle">
-          <Text fontSize="sm" fontWeight="bold">LIMITE MAX: </Text>          
+          <Text fontSize="sm" fontWeight="bold">MINTING MAX: 2</Text>          
         </Center>
         <Spacer />
         <HStack w="35%" alignContent="right" spacing="0">
-          <Button borderRadius="20px 0 0 20px" bgColor="black" {...dec}>-</Button>
+          <Button _hover={{background:"white",textColor:"#2a2a2a"}} borderRadius="20px 0 0 20px" bgColor="black" {...dec}>-</Button>
           <Input focusBorderColor="transparent" bgColor="#2a2a2a" borderRadius="0" m="0" border="none" textAlign="center" {...input} />
-          <Button borderRadius="0 20px 20px 0" bgColor="black" {...inc}>+</Button>
+          <Button _hover={{background:"white",textColor:"#2a2a2a"}} borderRadius="0 20px 20px 0" bgColor="black" {...inc}>+</Button>
         </HStack>
       </Flex>
     </Flex>

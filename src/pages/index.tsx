@@ -1,5 +1,5 @@
 import { useAccount } from 'wagmi'
-import { Flex, Spacer, Text, Link, Container, Box, IconButton, HStack, Heading } from '@chakra-ui/react'
+import { Flex, Spacer, Text, Link, Container, Box, IconButton, HStack, Heading, background } from '@chakra-ui/react'
 import { WalletBox } from '../components/WalletBox'
 import { QuantityBox } from '../components/QuantityBox'
 import { PriceBox } from '../components/PriceBox'
@@ -39,10 +39,13 @@ function Page() {
             color='white' 
             border='none'
             background='none' 
+            _hover={{
+              filter: "brightness(150%)"
+            }}
             aria-label='Reach website' 
             icon={<ChevronLeftIcon h='45px' w='45px' />
             } />
-          <Link href='https://nftouring.io' color='white'>WEBSITE</Link>
+          <Link href='https://nftouring.io' fontWeight="bold" fontSize="lg" color='white'>WEBSITE</Link>
           <Box w='2%' />
             <Text>PRESALE / PUBLIC SALE</Text>
         </HStack>

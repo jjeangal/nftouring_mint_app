@@ -25,10 +25,10 @@ export function PriceBox() {
       <Spacer />
       <Flex mb='5%' ml='5%' mr='5%'>
         <Center verticalAlign="middle">
-          <Link href="" fontSize="xs" fontWeight="bold" color='white' isExternal>VOIR LES CGV</Link>
+          <Link href="https://nftouring.io/licence-nfts/" fontSize="xs" fontWeight="bold" color='white' isExternal>INFO LICENSE NFT</Link>
         </Center>
         <Spacer />
-        <Button _hover={{background: "#2a2a2a"}} bgColor="black" borderRadius="20px" w="35%">MINT</Button>
+        <Button _hover={{background: "white", textColor:"#2a2a2a"}} bgColor="black" borderRadius="20px" w="35%">MINT</Button>
       </Flex>     
     </Flex>
   )

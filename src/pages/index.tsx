@@ -9,7 +9,6 @@ import { InfoBanner } from '../components/InfoBanner'
 
 import { Account } from '../components'
 
-
 function Page() {
   const { isConnected } = useAccount()
 

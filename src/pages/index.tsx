@@ -1,20 +1,17 @@
 import { useAccount } from 'wagmi'
-import { Flex, Spacer, Text, Link, Container, Box, IconButton, HStack, Heading, background } from '@chakra-ui/react'
+import { Flex, Spacer, Text, Link, Box, HStack } from '@chakra-ui/react'
 import { WalletBox } from '../components/WalletBox'
 import { QuantityBox } from '../components/QuantityBox'
 import { PriceBox } from '../components/PriceBox'
-import { ChevronLeftIcon } from '@chakra-ui/icons'
-
-import { Account } from '../components'
+import { BackButton } from '../components/buttons/BackButton'
 import { LicenseImage } from '../components/LicenseImage'
 import { InfoBanner } from '../components/InfoBanner'
 
+import { Account } from '../components'
+
+
 function Page() {
   const { isConnected } = useAccount()
-  
-  function goToWebsite() {
-    location.href = "https://nftouring.io";
-  }
 
   const sale = "Public";
 
@@ -34,17 +31,7 @@ function Page() {
       >
         <InfoBanner />
         <HStack ml="1%" mt="1%" textColor='white'>
-          <IconButton 
-            onClick={() => goToWebsite()} 
-            color='white' 
-            border='none'
-            background='none' 
-            _hover={{
-              filter: "brightness(150%)"
-            }}
-            aria-label='Reach website' 
-            icon={<ChevronLeftIcon h='45px' w='45px' />
-            } />
+          <BackButton />
           <Link href='https://nftouring.io' fontWeight="bold" fontSize="lg" color='white'>WEBSITE</Link>
           <Box w='2%' />
             <Text>PRESALE / PUBLIC SALE</Text>

@@ -16,9 +16,8 @@ export function PriceBox({status, amount}: PriceProps) {
 
   const { address } = useAccount()
   const [proof, setProof] = useState([""])
-  
-  /**
-  const { config: configWhitelist } = usePrepareContractWrite({
+
+  const { config: whitelistConfig } = usePrepareContractWrite({
     address: config.address,
     abi: config.abi,
     functionName: 'whitelistMint',
@@ -26,12 +25,8 @@ export function PriceBox({status, amount}: PriceProps) {
     overrides: {
       from: address,
       value: ethers.utils.parseEther(amount)
-    },
-    onError(error) {
-      console.log('Error', error)
     }
   })
-  */
 
   const { config: publicConfig } = usePrepareContractWrite({
     address: config.address,
@@ -41,17 +36,19 @@ export function PriceBox({status, amount}: PriceProps) {
     overrides: {
       from: address,
       value: ethers.utils.parseEther(amount)
-    },
-    onSuccess(data) {
-      console.log(data)
-    },
+    }
   })
 
   const { writeAsync } = useContractWrite(publicConfig)
+  const { writeWhitelist } = useContractWrite(whitelistConfig)
 
   const onMintClick = async () => {
     try {
-      await writeAsync?.();
+      if (status == 1) {
+        await writeWhitelist?.();
+      } if (status == 2) {
+        await writeAsync?.();
+      }
     } catch (error) {
       console.log(error);
     }
@@ -60,6 +57,7 @@ export function PriceBox({status, amount}: PriceProps) {
   useEffect(() => {
     const userProof = createProof(address as string)
     setProof(userProof)
+    console.log(status)
   }, [address])
 
   return (

@@ -1,6 +1,6 @@
 import { Center, Image } from "@chakra-ui/react";
 
-import License from '../assets/animatedLicense.gif';
+import License from '../resources/animatedLicense.gif';
 
 export function LicenseImage() {
   return (

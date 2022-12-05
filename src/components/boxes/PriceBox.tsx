@@ -1,4 +1,4 @@
-import { Button, Box, Flex, HStack, Spacer, Text, Center, InputProps } from "@chakra-ui/react";
+import { Button, Box, Flex, HStack, Spacer, Text, Center } from "@chakra-ui/react";
 import { ETHIcon } from "../icons/ETHIcon";
 import { InfoLink } from "../links/InfoLink";
 import { useAccount, useContractWrite, usePrepareContractWrite } from 'wagmi'
@@ -17,7 +17,7 @@ export function PriceBox({status, amount}: PriceProps) {
   const { address } = useAccount()
   const [proof, setProof] = useState([""])
 
-  const { config: whitelistConfig } = usePrepareContractWrite({
+  const { config: whitelistConfig, isError: isErrorWhitelist, error: errorWhitelist } = usePrepareContractWrite({
     address: config.address,
     abi: config.abi,
     functionName: 'whitelistMint',
@@ -28,7 +28,7 @@ export function PriceBox({status, amount}: PriceProps) {
     }
   })
 
-  const { config: publicConfig } = usePrepareContractWrite({
+  const { config: publicConfig, isError: isErrorPublic, error: errorPublic  } = usePrepareContractWrite({
     address: config.address,
     abi: config.abi,
     functionName: 'publicMint',
@@ -39,15 +39,25 @@ export function PriceBox({status, amount}: PriceProps) {
     }
   })
 
-  const { writeAsync } = useContractWrite(publicConfig)
-  const { writeWhitelist } = useContractWrite(whitelistConfig)
+  const { 
+    writeAsync : writeWhitelist, 
+    isLoading: whitelistLoading 
+  } = useContractWrite(whitelistConfig as any)
+  const { 
+    writeAsync : writePublic, 
+    isLoading: publicLoading
+  } = useContractWrite(publicConfig as any)
 
   const onMintClick = async () => {
     try {
       if (status == 1) {
+        if(isErrorWhitelist) console.log(errorWhitelist);
         await writeWhitelist?.();
-      } if (status == 2) {
-        await writeAsync?.();
+      } if(status == 2) {
+        if(isErrorPublic) console.log(errorPublic);
+        else {
+          await writePublic?.();
+        }
       }
     } catch (error) {
       console.log(error);
@@ -57,7 +67,6 @@ export function PriceBox({status, amount}: PriceProps) {
   useEffect(() => {
     const userProof = createProof(address as string)
     setProof(userProof)
-    console.log(status)
   }, [address])
 
   return (
@@ -94,7 +103,7 @@ export function PriceBox({status, amount}: PriceProps) {
           }} bgColor="black" 
           borderRadius="20px" 
           w="35%"
-          disabled={status == 0}
+          disabled={status == 0 || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
           onClick={onMintClick}
         >MINT</Button>
       </Flex>     

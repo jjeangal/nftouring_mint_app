@@ -1,4 +1,4 @@
-import { Button, Box, Flex, HStack, Spacer, Text, Center } from "@chakra-ui/react";
+import { Button, Box, Flex, HStack, Spacer, Text, Center, useToast } from "@chakra-ui/react";
 import { ETHIcon } from "../icons/ETHIcon";
 import { InfoLink } from "../links/InfoLink";
 import { useAccount, useContractWrite, usePrepareContractWrite } from 'wagmi'
@@ -16,6 +16,7 @@ export function PriceBox({status, amount}: PriceProps) {
 
   const { address } = useAccount()
   const [proof, setProof] = useState([""])
+  const toast = useToast()
 
   const { config: whitelistConfig, isError: isErrorWhitelist, error: errorWhitelist } = usePrepareContractWrite({
     address: config.address,
@@ -41,7 +42,8 @@ export function PriceBox({status, amount}: PriceProps) {
 
   const { 
     writeAsync : writeWhitelist, 
-    isLoading: whitelistLoading 
+    isLoading: whitelistLoading,
+    error: errorMsg
   } = useContractWrite(whitelistConfig as any)
   const { 
     writeAsync : writePublic, 
@@ -51,17 +53,40 @@ export function PriceBox({status, amount}: PriceProps) {
   const onMintClick = async () => {
     try {
       if (status == 1) {
-        if(isErrorWhitelist) console.log(errorWhitelist);
         await writeWhitelist?.();
-      } if(status == 2) {
-        if(isErrorPublic) console.log(errorPublic);
-        else {
-          await writePublic?.();
+        if(isErrorWhitelist) {
+          toast({
+            title: 'Minting not possible.',
+            description: splitMsg(errorWhitelist?.message as string),
+            status: 'error',
+            duration: 9000,
+            isClosable: true,
+          })
+        }
+      } 
+      if(status == 2) {
+        await writePublic?.();
+        if(isErrorPublic) {
+          toast({
+            title: 'Minting not possible.',
+            description: splitMsg(errorPublic?.message as string),
+            status: 'error',
+            duration: 9000,
+            isClosable: true,
+          })
         }
       }
     } catch (error) {
       console.log(error);
     }
+  }
+
+  const splitMsg = (msg: string) => {
+    const word = "message";
+    const array = msg.split(word);
+    const splited = array.pop();
+    const result = splited?.substring(3);
+    return result?.substring(0, result.indexOf('}')).slice(0, -1);
   }
 
   useEffect(() => {

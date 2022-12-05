@@ -95,11 +95,11 @@ function Page() {
           </Box>
           <Spacer />
           <Box w='30%'>              
-            <QuantityBox inc={inc} dec={dec} amount={amount} />
+            <QuantityBox inc={inc} dec={dec} amount={amount} status={status as number}/>
           </Box>
           <Spacer />
           <Box w='30%'>              
-            <PriceBox status={status as number} amount={amount.value} />
+            <PriceBox amount={amount.value} status={status as number} />
           </Box>
           <Spacer />
         </Flex>

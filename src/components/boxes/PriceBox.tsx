@@ -1,11 +1,12 @@
 import { Button, Box, Flex, HStack, Spacer, Text, Center, useToast } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { useAccount, useContractWrite, usePrepareContractWrite, useWaitForTransaction } from 'wagmi'
+import { ethers } from "ethers";
 import { ETHIcon } from "../icons/ETHIcon";
 import { InfoLink } from "../links/InfoLink";
-import { useAccount, useContractWrite, usePrepareContractWrite } from 'wagmi'
-import config from '../../contractConfig.json'
-import { ethers } from "ethers";
-import { useEffect, useState } from "react";
 import { createProof } from "../../merkleChecks"
+import { parseErrorMsg } from "../../parseErrorMsg"
+import config from '../../contractConfig.json'
 
 interface PriceProps {
   status: number;
@@ -39,22 +40,45 @@ export function PriceBox({status, amount}: PriceProps) {
     }
   })
 
-  const splitMsg = (msg: string) => {
-    const word = "message";
-    const array = msg.split(word);
-    const splited = array.pop();
-    const result = splited?.substring(3);
-    return result?.substring(0, result.indexOf('}')).slice(0, -1);
-  }
+  const { config: configW } = usePrepareContractWrite({
+    address: config.address,
+    abi: config.abi,
+    functionName: 'withdraw',
+    overrides: {
+      value: ethers.utils.parseEther('0')
+    }
+  })
 
   const { 
-    writeAsync : writeWhitelist, 
-    isLoading: whitelistLoading
+    writeAsync: writeWhitelist, 
+    isLoading: whitelistLoading,
+    isSuccess: whitelistSuccess
   } = useContractWrite(whitelistConfig as any)
-  const { 
-    writeAsync : writePublic, 
-    isLoading: publicLoading
+  const {
+    writeAsync: writePublic, 
+    isLoading: publicLoading,
+    isSuccess: publicSuccess
   } = useContractWrite(publicConfig as any)
+  
+  const {
+    write: wWrite,
+    isLoading: wLoading,
+    isSuccess: wSuccess
+  } = useContractWrite(configW as any)
+
+  const infoToast = () => {
+    toast({
+      title: 'Patientez juste un peu!',
+      description: "Votre portefeuille valide la transaction.",
+      status: 'info',
+      duration: 8000,
+      isClosable: true,
+    })
+  }
+
+  const but = async() => {
+    await wWrite?.();
+  }
 
   const onMintClick = async () => {
     try {
@@ -63,9 +87,9 @@ export function PriceBox({status, amount}: PriceProps) {
         if(isErrorWhitelist) {
           toast({
             title: 'Minting not possible.',
-            description: splitMsg(errorWhitelist?.message as string),
+            description: parseErrorMsg(errorWhitelist?.message as string),
             status: 'error',
-            duration: 4000,
+            duration: 3000,
             isClosable: true,
           })
         }
@@ -75,9 +99,9 @@ export function PriceBox({status, amount}: PriceProps) {
         if(isErrorPublic) {
           toast({
             title: 'Minting not possible.',
-            description: splitMsg(errorPublic?.message as string),
+            description: parseErrorMsg(errorPublic?.message as string),
             status: 'error',
-            duration: 4000,
+            duration: 3000,
             isClosable: true,
           })
         }
@@ -91,6 +115,12 @@ export function PriceBox({status, amount}: PriceProps) {
     const userProof = createProof(address as string)
     setProof(userProof)
   }, [address])
+
+  useEffect(() => {
+    if(publicSuccess == true || whitelistSuccess == true || wSuccess == true) {
+      infoToast()
+    }
+  }, [wSuccess, publicSuccess, whitelistSuccess])
 
   return (
     <Flex h="100%" direction='column' textColor='white' borderRadius='10px' backgroundColor={"#1F1E1E"}>
@@ -126,8 +156,8 @@ export function PriceBox({status, amount}: PriceProps) {
           }} bgColor="black" 
           borderRadius="20px" 
           w="35%"
-          disabled={status == 0 || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
-          onClick={onMintClick}
+          disabled={status == 0 || wLoading || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
+          onClick={but}
         >MINT</Button>
       </Flex>     
     </Flex>

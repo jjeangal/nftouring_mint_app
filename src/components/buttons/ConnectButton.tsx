@@ -8,7 +8,8 @@ export function ConnectButton() {
             return (
               <Button 
                 bgColor="black" 
-                textColor="white" 
+                textColor="white"
+                fontSize="sm" 
                 borderRadius="20px" 
                 _hover={{
                   bgColor: "white",

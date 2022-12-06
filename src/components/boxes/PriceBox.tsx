@@ -13,7 +13,6 @@ interface PriceProps {
 }
 
 export function PriceBox({status, amount}: PriceProps) {
-
   const { address } = useAccount()
   const [proof, setProof] = useState([""])
   const toast = useToast()
@@ -39,6 +38,14 @@ export function PriceBox({status, amount}: PriceProps) {
       value: ethers.utils.parseEther(amount)
     }
   })
+
+  const splitMsg = (msg: string) => {
+    const word = "message";
+    const array = msg.split(word);
+    const splited = array.pop();
+    const result = splited?.substring(3);
+    return result?.substring(0, result.indexOf('}')).slice(0, -1);
+  }
 
   const { 
     writeAsync : writeWhitelist, 
@@ -78,14 +85,6 @@ export function PriceBox({status, amount}: PriceProps) {
     } catch (error) {
       console.log(error);
     }
-  }
-
-  const splitMsg = (msg: string) => {
-    const word = "message";
-    const array = msg.split(word);
-    const splited = array.pop();
-    const result = splited?.substring(3);
-    return result?.substring(0, result.indexOf('}')).slice(0, -1);
   }
 
   useEffect(() => {

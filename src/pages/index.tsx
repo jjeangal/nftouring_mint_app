@@ -28,7 +28,7 @@ function Page() {
       step: 1,
       defaultValue: 2,
       min: 0,
-      max: parseInt(status as string) == 2 ? 4 : 2
+      max: (status as number) == 2 ? 4 : 2
     })
 
   function switchStatus(value: Number | unknown) { 
@@ -40,7 +40,7 @@ function Page() {
       case 2: 
         return "PUBLIC SALE"
       default:
-        return "N"
+        return ""
     }
   }
 

@@ -58,7 +58,7 @@ export function PriceBox({status, amount}: PriceProps) {
             title: 'Minting not possible.',
             description: splitMsg(errorWhitelist?.message as string),
             status: 'error',
-            duration: 9000,
+            duration: 4000,
             isClosable: true,
           })
         }
@@ -70,7 +70,7 @@ export function PriceBox({status, amount}: PriceProps) {
             title: 'Minting not possible.',
             description: splitMsg(errorPublic?.message as string),
             status: 'error',
-            duration: 9000,
+            duration: 4000,
             isClosable: true,
           })
         }

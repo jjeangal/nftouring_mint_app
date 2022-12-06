@@ -42,8 +42,7 @@ export function PriceBox({status, amount}: PriceProps) {
 
   const { 
     writeAsync : writeWhitelist, 
-    isLoading: whitelistLoading,
-    error: errorMsg
+    isLoading: whitelistLoading
   } = useContractWrite(whitelistConfig as any)
   const { 
     writeAsync : writePublic, 

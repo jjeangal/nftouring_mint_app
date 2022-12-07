@@ -65,7 +65,7 @@ function Page() {
         direction="column" 
         height="100vh" 
         width="100vw" 
-        bgImage="url('https://i.postimg.cc/0yBKsBMr/texture.jpg')"
+        bgImage="url('./texture.jpg')"
         bgRepeat='no-repeat' 
         bgPosition='center center'
         bgAttachment='fixed'

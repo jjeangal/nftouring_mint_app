@@ -51,7 +51,7 @@ export function QuantityBox ({inc, dec, amount, status} : QuantityProps) {
             bgColor="#2a2a2a" 
             borderRadius="0" 
             size={["xs", "xs", "sm", "md"]}
-            isDisabled={true} 
+            isDisabled={true}
             border="none" 
             textAlign="center" 
           {...amount}/>

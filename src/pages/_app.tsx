@@ -21,6 +21,7 @@ function App({ Component, pageProps }: AppProps) {
         <ConnectKitProvider >
           <NextHead>
             <title>NFTouring Minting Page</title>
+            <link rel="icon" href="/favicon.ico" />
           </NextHead>
           <Fonts />
           {mounted && <Component {...pageProps} />}

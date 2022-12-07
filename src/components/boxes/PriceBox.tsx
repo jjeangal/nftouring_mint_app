@@ -109,19 +109,19 @@ export function PriceBox({status, amount}: PriceProps) {
     <Flex h="100%" direction='column' textColor='white' borderRadius='10px' backgroundColor={"#1F1E1E"}>
         <Text mt="5%" ml="5%" fontWeight="bold" fontSize={["sm", "md", "lg", "xl"]} color="#676767">TOTAL</Text>
         <Spacer />
-        <HStack ml="5%" spacing='10%'>
-          <Box w="100px">
+        <HStack ml="5%" spacing='15%'>
+          <Box>
             <Text m='0'fontWeight="bold" fontSize={["xs", "xs", "md", "xl"]} color="#676767">PRIX</Text>
           </Box>
           <Box >
-            <Text m='0' fontWeight="bold" fontSize={["xs", "xs", "md", "xl"]} color="#676767">QUANTITÉ</Text>
+            <Text m='0' fontWeight="bold" fontSize={["xs", "xs", "md", "xl"]} color="#676767">QUANTITE</Text>
           </Box>
         </HStack>
-        <HStack ml="5%" spacing='10%'>
-          <Box w="100px">
-            <Text fontWeight="bold" fontSize={["xs", "xs", "md", "xl"]} m='0'>{amount}ETH  <ETHIcon /></Text>
+        <HStack ml="5%" spacing='5%'>
+          <Box>
+            <Text fontWeight="bold" fontSize={["xs", "xs", "md", "xl"]} m='0'>{amount}ETH <ETHIcon /></Text>
           </Box>
-          <Box w="100px">
+          <Box>
             <Text fontWeight="bold" fontSize={["xs", "xs", "md", "xl"]} m='0'>{amount}</Text>
           </Box>
         </HStack>

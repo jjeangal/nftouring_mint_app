@@ -1,6 +1,7 @@
 import { Link } from "@chakra-ui/react"
 
 export const WalletLink = () => {
+    const msg = "BESOIN D'AIDE POUR CONNECTER UN WALLET? CONSULTEZ L'ARTICLE"
     return(
         <Link 
           href="https://nftouring.io/creer-un-portefeuille-pour-mon-nft/" 
@@ -11,6 +12,6 @@ export const WalletLink = () => {
           fontWeight="bold" 
           color='black' 
           isExternal
-        >BESOIN D'AIDE POUR CONNECTER UN WALLET? CONSULTEZ L'ARTICLE</Link>
+        >{msg}</Link>
     )
 }

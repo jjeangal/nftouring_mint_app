@@ -52,16 +52,6 @@ export function PriceBox({status, amount}: PriceProps) {
     isSuccess: publicSuccess
   } = useContractWrite(publicConfig as any)
 
-  const infoToast = () => {
-    toast({
-      title: 'Patientez juste un peu!',
-      description: "Votre portefeuille valide la transaction.",
-      status: 'info',
-      duration: 8000,
-      isClosable: true,
-    })
-  }
-
   const onMintClick = async () => {
     try {
       if (status == 1) {
@@ -93,6 +83,16 @@ export function PriceBox({status, amount}: PriceProps) {
     }
   }
 
+  const infoToast = () => {
+    toast({
+      title: 'Patientez juste un peu!',
+      description: "Votre portefeuille valide la transaction.",
+      status: 'info',
+      duration: 8000,
+      isClosable: true,
+    })
+  }
+
   useEffect(() => {
     const userProof = createProof(address as string)
     setProof(userProof)
@@ -102,6 +102,7 @@ export function PriceBox({status, amount}: PriceProps) {
     if(publicSuccess == true || whitelistSuccess == true) {
       infoToast()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [publicSuccess, whitelistSuccess])
 
   return (

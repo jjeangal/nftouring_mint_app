@@ -63,7 +63,7 @@ function Page() {
     <>
       <Flex 
         direction="column" 
-        height="100vh" 
+        height={["50vh", "90vh", "100vh"]} 
         width="100vw" 
         bgImage="url('https://i.postimg.cc/0yBKsBMr/texture.jpg')"
         bgRepeat='no-repeat' 
@@ -84,21 +84,21 @@ function Page() {
         {supplyReached()}
         </Flex>
         <Spacer />
-        <Flex h="7%" justifyContent="center">
+        <Flex h="6%" justifyContent="center">
           <LicenseImage />
         </Flex>        
         <Spacer />
-        <Flex h="28%" mb='1.5%'>
+        <Flex h="27%" mt="auto">
           <Spacer />
-          <Box w='30%'>              
+          <Box w='30%' mb="1%">              
             <WalletBox />
           </Box>
           <Spacer />
-          <Box w='30%'>              
+          <Box w='30%' mb="1%">              
             <QuantityBox inc={inc} dec={dec} amount={amount} status={status as number}/>
           </Box>
           <Spacer />
-          <Box w='30%'>              
+          <Box w='30%' mb="1%">              
             <PriceBox amount={amount.value} status={status as number} />
           </Box>
           <Spacer />

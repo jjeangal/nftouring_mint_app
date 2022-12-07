@@ -140,6 +140,7 @@ export function PriceBox({status, amount}: PriceProps) {
           borderRadius="20px" 
           mt={["5%", "5%", "0", "0"]}
           fontSize={["xs", "xs", "sm"]}
+          size={["xs", "xs", "sm", "md"]}
           w={["fit-content", "fit-content", "30%"]}
           disabled={status == 0 || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
           onClick={onMintClick}

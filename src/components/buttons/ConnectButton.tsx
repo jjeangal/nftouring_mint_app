@@ -10,6 +10,7 @@ export function ConnectButton() {
                 bgColor="black" 
                 textColor="white"
                 fontSize={["xs", "xs", "sm"]} 
+                size={["xs", "xs", "sm", "md"]}
                 borderRadius="20px" 
                 _hover={{
                   bgColor: "white",

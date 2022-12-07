@@ -83,12 +83,8 @@ function Page() {
         <Flex justifyContent="center">
         {supplyReached()}
         </Flex>
-        <Spacer />
-        <Flex h="7%" justifyContent="center">
-          <LicenseImage />
-        </Flex>        
-        <Spacer />
-        <Flex h="28%" mb='1.5%'>
+        <LicenseImage/>
+        <Flex h="28%" mb='1.5%' mt="auto">
           <Spacer />
           <Box w='30%'>              
             <WalletBox />

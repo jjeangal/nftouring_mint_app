@@ -36,9 +36,9 @@ export function QuantityBox ({inc, dec, amount, status} : QuantityProps) {
         </Center>
         <Spacer />
         <HStack w={["100%", "90%", "60%", "50%", "40%"]} spacing="0">
-          <Button fontSize="sm" _hover={{background:"white",textColor:"#2a2a2a"}} borderRadius="20px 0 0 20px" bgColor="black" {...dec}>-</Button>
+          <Button w="20px" fontSize="sm" _hover={{background:"white",textColor:"#2a2a2a"}} borderRadius="20px 0 0 20px" bgColor="black" {...dec}>-</Button>
           <Input focusBorderColor="transparent" bgColor="#2a2a2a" borderRadius="0" border="none" textAlign="center" {...amount} />
-          <Button fontSize="sm" _hover={{background:"white",textColor:"#2a2a2a"}} borderRadius="0 20px 20px 0" bgColor="black" {...inc}>+</Button>
+          <Button w="20px" fontSize="sm" _hover={{background:"white",textColor:"#2a2a2a"}} borderRadius="0 20px 20px 0" bgColor="black" {...inc}>+</Button>
         </HStack>
       </Flex>
     </Flex>

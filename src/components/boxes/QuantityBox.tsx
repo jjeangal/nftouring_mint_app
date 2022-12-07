@@ -23,15 +23,15 @@ export function QuantityBox ({inc, dec, amount, status} : QuantityProps) {
     <Flex h="100%" backgroundColor={"#1F1E1E"} borderRadius='10px' direction="column" textColor="white">
       <VStack ml='5%' alignItems='left' mt='5%'>
         <Text fontWeight='bold' fontSize={["sm", "md", "lg", "xl"]} color="#676767">QUANTITÉ</Text>
-        <Text fontWeight="bold" fontSize={["sm", "sm", "md", "xl"]}>SELECTIONNEZ LE NOMBRE <br/> DE DRIVER LICENCE</Text>
+        <Text fontWeight="bold" fontSize={["xs", "xs", "md", "xl"]}>SELECTIONNEZ LE NOMBRE <br/> DE DRIVER LICENCE</Text>
       </VStack>
-      <Spacer />
-      <Flex mb='5%' ml='5%' mr='5%' direction={["column", "column", "row", "row"]} alignItems="center">
+      
+      <Flex mb='5%' ml='5%' mr='5%' direction={["column", "column", "row", "row"]} mt="auto" alignItems="center">
         <Center>
           {
             status == 2?
               <Text fontSize={["xs", "sm", "md"]} fontWeight="bold">MAX MINT: {4}</Text> :
-              <Text fontSize={["xs", "sm", "md"]} fontWeight="bold">MAX MINT: {2}</Text>  
+              <Text fontSize={["xs", "xs", "sm", "md"]} fontWeight="bold">MAX MINT: {2}</Text>  
           }
         </Center>
         <Spacer />

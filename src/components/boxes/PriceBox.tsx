@@ -127,7 +127,7 @@ export function PriceBox({status, amount}: PriceProps) {
         </HStack>
       <Flex />
       <Spacer />
-      <Flex mb='5%' ml='5%' mr='5%'>
+      <Flex mb='5%' ml='5%' mr='5%' direction={["column", "row"]} >
         <Center verticalAlign="middle">
           <InfoLink />
         </Center>

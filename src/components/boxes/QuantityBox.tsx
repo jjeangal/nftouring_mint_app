@@ -26,7 +26,7 @@ export function QuantityBox ({inc, dec, amount, status} : QuantityProps) {
         <Text fontWeight="bold" fontSize={["xs", "sm", "md", "lg", "xl"]}>SELECTIONNEZ LE NOMBRE <br/> DE DRIVER LICENCE</Text>
       </VStack>
       <Spacer />
-      <Flex mb='5%' ml='5%' mr='5%'>
+      <Flex mb='5%' ml='5%' mr='5%' direction={["column", "row"]}>
         <Center verticalAlign="middle">
           {
             status == 2?

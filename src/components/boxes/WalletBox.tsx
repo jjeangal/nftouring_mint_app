@@ -25,7 +25,7 @@ export function WalletBox() {
         </HStack>
       </VStack>
       <Spacer />
-      <Flex mb='5%' mr='5%' justifyContent='flex-end'>
+      <Flex mb='5%' mr='5%' justifyContent={["center", "flex-end"]}>
         <ConnectButton />
       </Flex>
     </Flex>

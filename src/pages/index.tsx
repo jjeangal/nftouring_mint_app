@@ -83,7 +83,7 @@ function Page() {
         <Flex justifyContent="center">
         {supplyReached()}
         </Flex>
-        <Flex h="15%"/>
+        <Flex h="20%"/>
         <Flex h="7%" justifyContent="center">
           <LicenseImage />
         </Flex>        
@@ -103,7 +103,6 @@ function Page() {
           </Box>
           <Spacer />
         </Flex>
-        <Flex h="2%"/>
       </Flex>
     </>
   )

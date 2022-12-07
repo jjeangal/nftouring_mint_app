@@ -1,6 +1,6 @@
 import { Button, Box, Flex, HStack, Spacer, Text, Center, useToast } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useAccount, useContractWrite, usePrepareContractWrite, useWaitForTransaction } from 'wagmi'
+import { useAccount, useContractWrite, usePrepareContractWrite } from 'wagmi'
 import { ethers } from "ethers";
 import { ETHIcon } from "../icons/ETHIcon";
 import { InfoLink } from "../links/InfoLink";
@@ -155,10 +155,11 @@ export function PriceBox({status, amount}: PriceProps) {
             textColor:"#2a2a2a"
           }} bgColor="black" 
           borderRadius="20px" 
+          fontSize="sm"
           w="35%"
           disabled={status == 0 || wLoading || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
           onClick={but}
-        >MINT</Button>
+        >MINT / ACHETER</Button>
       </Flex>     
     </Flex>
   )

@@ -83,12 +83,12 @@ function Page() {
         <Flex justifyContent="center">
         {supplyReached()}
         </Flex>
-        <Spacer />
+        <Flex h="20%"/>
         <Flex h="7%" justifyContent="center">
           <LicenseImage />
         </Flex>        
         <Spacer />
-        <Flex h="28%" mb='1.5%'>
+        <Flex h="26%" mb='1.5%'>
           <Spacer />
           <Box w='30%'>              
             <WalletBox />
@@ -103,6 +103,7 @@ function Page() {
           </Box>
           <Spacer />
         </Flex>
+        <Flex h="2%"/>
       </Flex>
     </>
   )

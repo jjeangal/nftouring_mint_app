@@ -15,10 +15,10 @@ export function ConnectButton() {
                   bgColor: "white",
                   textColor: "#2A2A2A"
                 }}
-                w="35%" 
+                w="fit-content" 
                 onClick={show}
               >
-                {isConnected ? ensName ?? truncatedAddress : "Connect Wallet"}
+                {isConnected ? ensName ?? truncatedAddress : "Connect"}
               </Button>
             );
           }}

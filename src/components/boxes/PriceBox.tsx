@@ -132,17 +132,19 @@ export function PriceBox({status, amount}: PriceProps) {
           <InfoLink />
         </Center>
         <Spacer />
-        <Button 
-          _hover={{
-            background: "white", 
-            textColor:"#2a2a2a"
-          }} bgColor="black" 
-          borderRadius="20px" 
-          fontSize={"sm"}
-          w="35%"
-          disabled={status == 0 || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
-          onClick={onMintClick}
-        >MINT / ACHETER</Button>
+        <Center>
+          <Button 
+            _hover={{
+              background: "white", 
+              textColor:"#2a2a2a"
+            }} bgColor="black" 
+            borderRadius="20px" 
+            fontSize={"sm"}
+            w="fit-content"
+            disabled={status == 0 || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
+            onClick={onMintClick}
+          >MINT / ACHETER</Button>
+        </Center>
       </Flex>     
     </Flex>
   )

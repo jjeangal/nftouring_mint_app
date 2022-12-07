@@ -40,31 +40,17 @@ export function PriceBox({status, amount}: PriceProps) {
     }
   })
 
-  const { config: configW } = usePrepareContractWrite({
-    address: config.address,
-    abi: config.abi,
-    functionName: 'withdraw',
-    overrides: {
-      value: ethers.utils.parseEther('0')
-    }
-  })
-
   const { 
     writeAsync: writeWhitelist, 
     isLoading: whitelistLoading,
     isSuccess: whitelistSuccess
   } = useContractWrite(whitelistConfig as any)
+
   const {
     writeAsync: writePublic, 
     isLoading: publicLoading,
     isSuccess: publicSuccess
   } = useContractWrite(publicConfig as any)
-  
-  const {
-    write: wWrite,
-    isLoading: wLoading,
-    isSuccess: wSuccess
-  } = useContractWrite(configW as any)
 
   const infoToast = () => {
     toast({
@@ -74,10 +60,6 @@ export function PriceBox({status, amount}: PriceProps) {
       duration: 8000,
       isClosable: true,
     })
-  }
-
-  const but = async() => {
-    await wWrite?.();
   }
 
   const onMintClick = async () => {
@@ -117,10 +99,10 @@ export function PriceBox({status, amount}: PriceProps) {
   }, [address])
 
   useEffect(() => {
-    if(publicSuccess == true || whitelistSuccess == true || wSuccess == true) {
+    if(publicSuccess == true || whitelistSuccess == true) {
       infoToast()
     }
-  }, [wSuccess, publicSuccess, whitelistSuccess])
+  }, [publicSuccess, whitelistSuccess])
 
   return (
     <Flex h="100%" direction='column' textColor='white' borderRadius='10px' backgroundColor={"#1F1E1E"}>
@@ -157,8 +139,8 @@ export function PriceBox({status, amount}: PriceProps) {
           borderRadius="20px" 
           fontSize="sm"
           w="35%"
-          disabled={status == 0 || wLoading || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
-          onClick={but}
+          disabled={status == 0 || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
+          onClick={onMintClick}
         >MINT / ACHETER</Button>
       </Flex>     
     </Flex>

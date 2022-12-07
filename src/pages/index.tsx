@@ -81,7 +81,7 @@ function Page() {
           <Text fontWeight="bold" color="#94d5f2" fontSize="sm">{switchStatus(status)}</Text>
         </HStack>
         <Flex justifyContent="center">
-        { supplyReached()}
+        {supplyReached()}
         </Flex>
         <Spacer />
         <Flex h="7%" justifyContent="center">

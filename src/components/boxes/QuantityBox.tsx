@@ -23,7 +23,7 @@ export function QuantityBox ({inc, dec, amount, status} : QuantityProps) {
     <Flex h="100%" backgroundColor={"#1F1E1E"} borderRadius='10px' direction="column" textColor="white">
       <VStack ml='5%' alignItems='left' mt='5%'>
         <Text fontWeight='bold' fontSize='xl' color="#676767">QUANTITÉ</Text>
-        <Text fontWeight="bold" fontSize="xl">SELECTIONNEZ LE NOMBRE <br/> DE DRIVER LICENSES</Text>
+        <Text fontWeight="bold" fontSize="xl">SELECTIONNEZ LE NOMBRE <br/> DE DRIVER LICENCE</Text>
       </VStack>
       <Spacer />
       <Flex mb='5%' ml='5%' mr='5%'>
@@ -31,7 +31,7 @@ export function QuantityBox ({inc, dec, amount, status} : QuantityProps) {
           {
             status == 2?
               <Text fontSize="sm" fontWeight="bold">PUBLIC SALE MAX: {4}</Text> :
-              <Text fontSize="sm" fontWeight="bold">PRIVATE SALE MAX: {2}</Text>                  
+              <Text fontSize="sm" fontWeight="bold">PRIVATE SALE MAX: {2}</Text>  
           }
         </Center>
         <Spacer />

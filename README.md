@@ -1,12 +1,22 @@
+# NFTouring Genesis Minting Page - Private Driver License
+
+This web3 project was created for the first drop of NFTouring, a collection of private driver licenses. It allows whitelisted and non whitelisted users to mint an nft from the genesis collection depending on the status of the sale.
+
+# Project Links and Information
+
+This static page was deployed at the following address: https://nftouring-genesis-mint.vercel.app/
+
+Find more information about the collection smart contract on etherscan: https://etherscan.io/address/0x7d9493676432edd61d157caa5c3cb4ba1f753c5c 
+
+Find more information about the nftouring webpage at: https://nftouring.io/en/
+
+# Regards
+
+Both the DAPP and smart contracts have been created, developed, and deployed by me.
+
+# Tools and Libraries
+
 This is a [wagmi](https://wagmi.sh) + [ConnectKit](https://docs.family.co/connectkit) + [Next.js](https://nextjs.org) project bootstrapped with [`create-wagmi`](https://github.com/wagmi-dev/wagmi/tree/main/packages/create-wagmi)
-
-# Getting Started
-
-Run `npm run dev` in your terminal, and then open [localhost:3000](http://localhost:3000) in your browser.
-
-Once the webpage has loaded, changes made to files inside the `src/` directory (e.g. `src/pages/index.tsx`) will automatically update the webpage.
-
-# Learn more
 
 To learn more about [Next.js](https://nextjs.org), [ConnectKit](https://docs.family.co/connectkit) or [wagmi](https://wagmi.sh), check out the following resources:
 

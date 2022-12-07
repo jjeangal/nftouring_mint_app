@@ -9,16 +9,16 @@ export function ConnectButton() {
               <Button 
                 bgColor="black" 
                 textColor="white"
-                fontSize="sm" 
+                fontSize={["xs", "xs", "sm"]} 
                 borderRadius="20px" 
                 _hover={{
                   bgColor: "white",
                   textColor: "#2A2A2A"
                 }}
-                w="fit-content" 
+                w={["fit-content", "fit-content", "fit-content", "35%"]} 
                 onClick={show}
               >
-                {isConnected ? ensName ?? truncatedAddress : "Connect"}
+                {isConnected ? ensName ?? truncatedAddress : "CONNECT"}
               </Button>
             );
           }}

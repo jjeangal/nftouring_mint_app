@@ -8,8 +8,9 @@ export const WalletLink = () => {
           _hover={{
             textDecoration: "none"
           }}
+          textAlign="center"
           textDecoration="underline"
-          fontSize={["sm", "md", "xl"]} 
+          fontSize={["sm", "sm", "lg", "xl"]} 
           fontWeight="bold" 
           color='black' 
           isExternal

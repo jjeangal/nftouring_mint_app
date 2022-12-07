@@ -127,24 +127,23 @@ export function PriceBox({status, amount}: PriceProps) {
         </HStack>
       <Flex />
       <Spacer />
-      <Flex mb='5%' ml='5%' mr='5%' direction={["column", "row"]} >
-        <Center verticalAlign="middle">
+      <Flex mb='5%' ml='5%' mr='5%' direction={["column", "column", "row", "row"]} alignItems="center" >
+        <Center>
           <InfoLink />
         </Center>
         <Spacer />
-        <Center>
-          <Button 
-            _hover={{
-              background: "white", 
-              textColor:"#2a2a2a"
-            }} bgColor="black" 
-            borderRadius="20px" 
-            fontSize={"sm"}
-            w="fit-content"
-            disabled={status == 0 || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
-            onClick={onMintClick}
-          >MINT / ACHETER</Button>
-        </Center>
+        <Button 
+          _hover={{
+            background: "white", 
+            textColor:"#2a2a2a"
+          }} bgColor="black" 
+          borderRadius="20px" 
+          mt={["5%", "5%", "0", "0"]}
+          fontSize={"sm"}
+          w="fit-content"
+          disabled={status == 0 || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
+          onClick={onMintClick}
+        >MINT / ACHETER</Button>
       </Flex>     
     </Flex>
   )

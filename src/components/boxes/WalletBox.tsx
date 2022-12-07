@@ -15,17 +15,17 @@ export function WalletBox() {
           {isConnected ? 
             (<>
               <CircleIcon color='#2EE240' />
-              <Text fontSize={["xs", "sm"]} fontWeight="bold" color="white">CONNECTÉ</Text>
+              <Text fontSize={["xs", "xs", "sm"]} fontWeight="bold" color="white">CONNECTÉ</Text>
             </>) : 
             (<>
               <CircleIcon color='#D10000' />
-              <Text fontSize={["xs", "sm"]} fontWeight="bold" color="white">NON CONNECTÉ</Text>
+              <Text fontSize={["xs", "xs", "sm"]} fontWeight="bold" color="white">NON CONNECTÉ</Text>
             </>) 
           }
         </HStack>
       </VStack>
       <Spacer />
-      <Flex mb='5%' mr='5%' justifyContent={["center", "flex-end"]}>
+      <Flex mb='5%' mr={['0', '0', '5%', '5%']} justifyContent={["center", "center", "flex-end", "flex-end"]}>
         <ConnectButton />
       </Flex>
     </Flex>

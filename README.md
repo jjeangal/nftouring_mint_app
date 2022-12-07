@@ -1,6 +1,6 @@
 # NFTouring Genesis Minting Page - Private Driver License
 
-This web3 project was created for the first drop of NFTouring, a collection of private driver licenses. It allows whitelisted and non whitelisted users to mint an nft from the genesis collection depending on the status of the sale.
+This web3 project repository was created for the first drop of NFTouring, a collection of private driver licenses. It allows whitelisted and non whitelisted users to mint an nft from the genesis collection depending on the status of the sale.
 
 # Project Links and Information
 

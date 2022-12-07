@@ -1,7 +1,7 @@
 import { getDefaultClient } from 'connectkit'
 import { createClient, chain } from 'wagmi'
 
-const chains = [chain.mainnet, chain.goerli];
+const chains = [chain.mainnet];
 
 export const client = createClient(
   getDefaultClient({

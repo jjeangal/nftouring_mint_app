@@ -63,7 +63,7 @@ function Page() {
     <>
       <Flex 
         direction="column" 
-        height={["50vh", "90vh", "100vh"]} 
+        height="100vh" 
         width="100vw" 
         bgImage="url('https://i.postimg.cc/0yBKsBMr/texture.jpg')"
         bgRepeat='no-repeat' 

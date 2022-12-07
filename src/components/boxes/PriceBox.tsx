@@ -107,22 +107,22 @@ export function PriceBox({status, amount}: PriceProps) {
 
   return (
     <Flex h="100%" direction='column' textColor='white' borderRadius='10px' backgroundColor={"#1F1E1E"}>
-        <Text mt="5%" ml="5%" fontWeight="bold" fontSize='xl' color="#676767">TOTAL</Text>
+        <Text mt="5%" ml="5%" fontWeight="bold" fontSize={["sm", "md", "lg", "xl"]} color="#676767">TOTAL</Text>
         <Spacer />
         <HStack ml="5%" spacing='10%'>
           <Box w="100px">
-            <Text m='0'fontWeight="bold" fontSize='xl' color="#676767">PRIX</Text>
+            <Text m='0'fontWeight="bold" fontSize={["sm", "md", "lg", "xl"]} color="#676767">PRIX</Text>
           </Box>
           <Box >
-            <Text m='0' fontWeight="bold" fontSize='xl' color="#676767">QUANTITÉ</Text>
+            <Text m='0' fontWeight="bold" fontSize={["sm", "md", "lg", "xl"]} color="#676767">QUANTITÉ</Text>
           </Box>
         </HStack>
         <HStack ml="5%" spacing='10%'>
           <Box w="100px">
-            <Text fontWeight="bold" fontSize="2xl" m='0'>{amount}ETH  <ETHIcon /></Text>
+            <Text fontWeight="bold" fontSize={["sm", "md", "lg", "xl"]} m='0'>{amount}ETH  <ETHIcon /></Text>
           </Box>
           <Box w="100px">
-            <Text fontWeight="bold" fontSize="2xl" m='0'>{amount}</Text>
+            <Text fontWeight="bold" fontSize={["sm", "md", "lg", "xl"]} m='0'>{amount}</Text>
           </Box>
         </HStack>
       <Flex />
@@ -138,7 +138,7 @@ export function PriceBox({status, amount}: PriceProps) {
             textColor:"#2a2a2a"
           }} bgColor="black" 
           borderRadius="20px" 
-          fontSize="sm"
+          fontSize={"sm"}
           w="35%"
           disabled={status == 0 || (status == 1 && whitelistLoading) || (status == 2 && publicLoading) || (parseInt(amount) == 0)}
           onClick={onMintClick}

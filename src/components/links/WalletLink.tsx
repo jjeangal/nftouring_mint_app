@@ -9,7 +9,7 @@ export const WalletLink = () => {
             textDecoration: "none"
           }}
           textDecoration="underline"
-          fontSize={["md", "xl"]} 
+          fontSize={["sm", "md", "xl"]} 
           fontWeight="bold" 
           color='black' 
           isExternal

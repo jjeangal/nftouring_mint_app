@@ -30,8 +30,8 @@ export function QuantityBox ({inc, dec, amount, status} : QuantityProps) {
         <Center verticalAlign="middle">
           {
             status == 2?
-              <Text fontSize="sm" fontWeight="bold">PUBLIC SALE MAX: {4}</Text> :
-              <Text fontSize="sm" fontWeight="bold">PRIVATE SALE MAX: {2}</Text>  
+              <Text fontSize={["xs", "sm", "md"]} fontWeight="bold">MAX MINT: {4}</Text> :
+              <Text fontSize={["xs", "sm", "md"]} fontWeight="bold">MAX MINT: {2}</Text>  
           }
         </Center>
         <Spacer />

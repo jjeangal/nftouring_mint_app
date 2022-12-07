@@ -10,7 +10,7 @@ export function WalletBox() {
   return (
     <Flex h='100%' backgroundColor={"#1F1E1E"} borderRadius='10px' direction="column">
       <VStack direction='column' alignItems='left' ml='5%' mt='5%'>
-        <Text fontWeight='bold' fontSize='xl' color='#676767'>WALLET</Text>
+        <Text fontWeight='bold' fontSize={["sm", "md", "lg", "xl"]} color='#676767'>WALLET</Text>
         <HStack>
           {isConnected ? 
             (<>

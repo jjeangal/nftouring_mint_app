@@ -87,7 +87,7 @@ function Page() {
         <Flex h="7%" justifyContent="center">
           <LicenseImage />
         </Flex>        
-        <Flex h={["25%", "25%", "35%", "35%"]}/>
+        <Flex h={["20%", "20%", "35%", "35%"]}/>
         <Flex h="26%" mb='1.5%'>
           <Spacer />
           <Box w='30%'>              

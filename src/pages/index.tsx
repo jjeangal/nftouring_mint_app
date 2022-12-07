@@ -84,21 +84,21 @@ function Page() {
         {supplyReached()}
         </Flex>
         <Spacer />
-        <Flex h="6%" justifyContent="center">
+        <Flex h="7%" justifyContent="center">
           <LicenseImage />
         </Flex>        
         <Spacer />
-        <Flex h="27%" mt="auto">
+        <Flex h="28%" mb='1.5%'>
           <Spacer />
-          <Box w='30%' mb="1%">              
+          <Box w='30%'>              
             <WalletBox />
           </Box>
           <Spacer />
-          <Box w='30%' mb="1%">              
+          <Box w='30%'>              
             <QuantityBox inc={inc} dec={dec} amount={amount} status={status as number}/>
           </Box>
           <Spacer />
-          <Box w='30%' mb="1%">              
+          <Box w='30%'>              
             <PriceBox amount={amount.value} status={status as number} />
           </Box>
           <Spacer />

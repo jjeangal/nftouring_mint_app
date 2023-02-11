@@ -6,7 +6,7 @@ This web3 project repository was created for the first drop of NFTouring, a coll
 
 This static page was deployed at the following address: https://nftouring-genesis-mint.vercel.app/
 
-Find more information about the collection smart contract on etherscan: https://etherscan.io/address/0x7d9493676432edd61d157caa5c3cb4ba1f753c5c 
+Find more information about the collection smart contract on etherscan: https://etherscan.io/address/0x7d9493676432edd61d157caa5c3cb4ba1f753c5c https://etherscan.io/address/0x6268f463379675479425c1fF708F0eE1fC1C0E2c
 
 Find more information about the nftouring webpage at: https://nftouring.io/en/
 
